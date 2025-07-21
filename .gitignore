@@ -1,0 +1,34 @@
+#IDE folders
+*.idea/
+*.vs/
+*.vscode/
+
+#Project-specific folders
+*obj/
+*bin/
+*temp/
+
+#Deprecated Nuget folder
+/packages/
+
+#Nuke output folder
+/output/
+
+#Project-specific files
+*/build.schema.json
+
+#User-specific files
+*.user
+
+# Артефакты .NET publish
+publish/
+
+# Логи
+*.log
+
+# .env файлы
+.env
+.env.*
+
+# Coverage
+coverage/

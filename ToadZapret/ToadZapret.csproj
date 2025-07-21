@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>Assets/appicon.ico</ApplicationIcon>
+        <AssemblyTitle>ToadZapret</AssemblyTitle>
+        <AssemblyDescription>Приложение для обхода блокировок</AssemblyDescription>
+        <AssemblyCompany>Your Company</AssemblyCompany>
+        <AssemblyProduct>ToadZapret</AssemblyProduct>
+        <AssemblyCopyright>Copyright © 2024</AssemblyCopyright>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+        <PublishSingleFile>true</PublishSingleFile>
+        <SelfContained>true</SelfContained>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <PublishReadyToRun>true</PublishReadyToRun>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Page Update="Views\MainWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.7" />
+      <PackageReference Include="WPF-UI" Version="4.0.3" />
+      <PackageReference Include="WPF-UI.Abstractions" Version="4.0.3" />
+      <PackageReference Include="WPF-UI.Tray" Version="4.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="zapret\cygwin1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="zapret\list-youtube.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="zapret\quic_initial_www_google_com.bin">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="zapret\tls_clienthello_www_google_com.bin">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="zapret\WinDivert.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="zapret\WinDivert64.sys">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="zapret\winws.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Assets\icon.ico" />
+      <None Remove="Assets\appicon.ico" />
+      <Resource Include="Assets\appicon.ico" />
+    </ItemGroup>
+
+</Project>
